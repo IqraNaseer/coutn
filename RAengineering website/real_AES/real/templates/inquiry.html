@@ -1,0 +1,69 @@
+{% extends 'basic.html' %}
+
+{% block title%} Inquiry {% endblock %}
+{% block body %}
+
+<div class="container my-3">
+    <h2 class="text-center">Inquiry</h2>
+    <img src="/static/inquiry.jpg" style="float: right;"> 
+    <form action="/inquiry/" method="post">{% csrf_token %}
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="name" name='name' placeholder="Enter Your Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Email:</label>
+   
+    <div class="col-sm-10">
+    <input type="email" class="form-control-lg" id="email" name='email' placeholder="Enter Your Email">
+     
+  </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Title:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="title" name='title' placeholder="Title">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Company:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="company" name='company' placeholder="Company">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Address:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="address" name='addres' placeholder="Address">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">City:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="city" name='city' placeholder="City">
+    </div>
+  </div>
+    <div class="form-group row ">
+    <label for="name" class="col-sm-2 col-form-label ">State:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="state" name='state' placeholder="state">
+    </div>
+  </div>
+   <div class="form-group row">
+    <label for="desc" class="col-sm-2 col-form-label">Postal Code:</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control-lg" id="code" name='code' placeholder="Postal Code">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="desc" class="col-sm-2 col-form-label">Contact Number:</label>
+    <div class="col-sm-10">
+    <input type="tel" class="form-control-lg" id="phn" name='phn' placeholder="COntact Number">
+    </div>
+  </div>
+    <button type="submit" class="btn btn-success" style="font: 1em sans-serif;">Submit</button>
+</form>
+</div>
+{% endblock %}

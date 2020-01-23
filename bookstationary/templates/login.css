@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+    margin-top: 200px;
+    font-family: 'Impact', Haettenschweiler, Arial Narrow Bold, sans-serif;
+    background-color: coral;
+    
+}
+.imglogo{
+    width: 20%;
+    height: 70px;
+    text-align: left;
+}
+.wel{
+    width: 80%;
+    float: center;
+}
+.cart{
+    width: 20%;
+    float: right;
+}

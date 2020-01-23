@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Dosis', sans-serif;
+}
+h1{
+    font-size: 3em;
+  
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.5;
+}
+.menu img{
+    height: 90px;
+    width: 340px;
+    float: left;
+    vertical-align: middle;
+    padding-right: 50px;
+}
+.menu ul{
+    text-align: right;
+}
+.menu ul li{
+    display: inline;
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+}
+.container{
+    width: 100%;
+}
+.carousel-inner{
+    height: 300px;
+    width: 100%;
+}
+.item img{
+    height: 300px;
+    width: 100%;
+}
+.item active img{
+    height: 300px;
+    width: 100%;
+
+}
+.welcome{
+    padding: 0px 0px 0px 50px;
+    text-align: justify;
+}
+.rightcol{
+    height: 200px;
+    float: right;
+    vertical-align: middle;
+}
+.contact{
+    width: 100%;
+    
+  }
+  .cta{
+    background-color: beige;
+    width: 100%;
+   
+  }
+  .cta a{
+   color: black;
+    float: right;
+  }
+  .cta::after{
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .social i{
+    height: 40px;
+    width: 40px;
+    padding-top: 10px;
+    border: 1px solid black;
+    color: #fff;
+  }

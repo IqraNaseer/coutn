@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}How it works|ladies Stitching Service{% endblock %}
+{% block content %}
+  <h2 class="text-center">How We Serve Our Services</h2>
+  <p class="text-center">
+    In recent times an increasing number of customers are availing online
+    services, tailoring services are not an exception. More and more people have
+    started to embrace online tailoring services because of the convenience.</p>
+    <section id="work" class="center" style="background-color: lightpink;">
+   <br>
+      <div class="row d-flex justify-content-center"">
+          <div class="d-inline p-2 bg-primary text-white mx-5 ">Your Fabric Your Style</div>
+          <div class="d-inline p-2 bg-dark text-white mx-5 ">Your Design We Create</div>
+      </div><br>
+      <div class="row d-flex justify-content-center"">
+          <div class="d-inline p-2 badge badge-light boarder-black text-wrap mx-2 " style="width: 16rem; height: 8rem;"><h5><a href="/order/">Customize and place order online</a></h5><p>Choose your product and personalise it with custom necklines, sleeves etc. Schedule a free pickup.</p></div>
+          <div class="d-inline p-2 badge badge-light boarder-black text-wrap mx-2 " style="width: 16rem; height: 8rem;"><h5><a href="/detail/">Give us your measurement</a></h5><p>While we pickup your dress material, give us a perfectly fitting garment to stitch as per your measurements.</p></div>
+          <div class="d-inline p-2 badge badge-light boarder-black text-wrap mx-2 " style="width: 16rem; height: 8rem;"><h5><a href="/select/">Create Your Style As you want</a></h5><p>Our team of talented designers will ensure your outfit is the most flattering and in keeping with the fashion trends of the season.</p></div>
+          <div class="d-inline p-2 badge badge-light boarder-black text-wrap mx-2 " style="width: 16rem; height: 8rem;"><h5><a href="/checkout/">Finally Delivered At your door</a></h5><p>Each material is individually hand-cut, stitched and finished by professional tailors and delivered at your doorstep</p></div>
+      </div>
+      <br>
+  </section><br>
+{% endblock %}
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}
+

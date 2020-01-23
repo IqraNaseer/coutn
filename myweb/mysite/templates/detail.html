@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block titel %} Measuring Details {% endblock %}
+{% block content %}
+<h1>Size Measurment</h1>
+<form action="/select/" method="post">{% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="input">Shirt Length</label>
+        <input type="number" class="form-control" id="lenght" name="length>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="input">Sleves</label>
+        <input type="number" class="form-control" id="seleves" name="seleves">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="input">Chest</label>
+      <input type="number" class="form-control" id="chest" name="chest" >
+    </div>
+    <div class="form-group">
+      <label for="inputwest">West</label>
+      <input type="number" class="form-control" id="west" name="west" >
+    </div>
+      <div class="form-group">
+        <label for="input">Heap</label>
+        <input type="number" class="form-control" id="heap" name="heap">
+      </div>
+      <div class="form-group">
+        <label for="input">Sholder</label>
+        <input type="number" class="form-control" id="shoulder" name="shoulder" >
+      </div>
+      <div class="form-group">
+        <label for="input">Further detail about stitching</label>
+        <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+
+{% endblock %}
+{% block js %}
+<script>
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+     if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+</script>
+{% endblock %}

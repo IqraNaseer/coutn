@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- font awosom -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+      form,ul,p{
+        font-size: medium;
+      }
+      h1{
+        font-size: 24pt;
+        
+      }
+      h2{
+        font-size: 20pt;
+        
+      }
+      h3{
+        font-size: 18pt;
+        
+      }
+      h4{
+        font-size: 16pt;
+        
+      }
+      body{
+        font-size: medium;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        
+      
+      }
+      
+      {% block css %} {% endblock %}
+
+    </style>
+  </head>
+  <body style="background-image: url('/static/t5.jpg');" >
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="/static/RA Logo New PNG.png" width="300px" height="90px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link mx-2" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">ContactUs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/clients">Clients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/inquiry">Inquiry</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/overview/" style="font-size: medium;">Overview </a>
+                <a class="dropdown-item" href="/calibration/" style="font-size: medium;">Calibration</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="/Verification/" style="font-size: medium;">Verification Services</a>
+              </div>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/product/" tabindex="-1" aria-disabled="false">Products</a>
+            </li>
+          </ul>
+      </nav>
+      {% block body %}{% endblock %}
+      
+
+
+    <!-- Footer Links -->
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid text-center text-md-left bg-dark">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <br>
+          <!-- Content -->
+          <h5 class="text-uppercase text-white">Contact Information</h5>
+          <p class="text-white" >
+            <div class="cta">
+                <a class="fb-ic" target="_" href="https://www.facebook.com/">
+                  <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic" target="_" href="https://www.facebook.com/">
+                  <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic" target="_" href="https://www.facebook.com/">
+                  <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="ins-ic" target="_" href="https://www.facebook.com/">
+                  <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+            </div>
+          </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <br>
+          <!-- Links --
+          <h5 class="text-uppercase text-white">Categories</h5>-->
+            <h3 class="text-white">Our Work</h3>
+          <ul class="text-white">
+                <li>New weight scale sales,Reparing calibratiobn</li>
+                <li>Measurement Control Instrument Controlling</li>
+                <li>Software and web development system consultant</li>
+                <li>Repairing of Electronic Instruments and Calibration</li>
+            </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <br><br><br>
+          <!-- Links -->
+          <p class="text-white"><strong>Website: </strong><a target="_" href="http://www.raengineerings.com">www.raengineerings.com</a><strong><br>E-mail:</strong> <a target="_blank" href="mailto:raengineeringsolution@gmail.com">info@raengineerings.com</a><br>
+       <strong>Office: </strong> R-716 Sector 9 North Karachi,Karachi</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-black">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/">raengineeringsolution.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  {%block js%}{%endblock%}
+  </body>
+</html>      

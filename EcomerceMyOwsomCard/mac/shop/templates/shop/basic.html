@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+      {% block css %} {% endblock %}
+    </style>
+  
+  </head>
+  <body>
+  {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="/static/shop/images/book7.jpg" width="150" height="70">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link mx-2" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">ContactUs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/request">Make a Request</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Venders
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Vender 1</a>
+          <a class="dropdown-item" href="#">Vender 2</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="#">Vender 3</a>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/about" tabindex="-1" aria-disabled="false">AboutUs</a>
+      </li>
+    </ul>
+    {% if user.is_authenticated %}
+        <div><button type="button" class="btn btn" ><a href="{ url 'logout' }">LOGOUT</a></button></div>
+    {% else %}
+    <button type="button" class="btn btn" ><a href="{ url 'login'}">LOGIN</a></button>
+    <button type="button" class="btn btn" ><a href="{ url 'signup'}">Sign Up</a></button>
+    <button type="button" class="btn btn" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" ><img src="/static/shop/images/cart.png" width="30px" height="30px">Cart(<span id="cart">0</span>)</button>
+  </div>
+        {% endif %}
+</nav>
+{% block body %}{% endblock %}
+
+
+    <!-- Footer Links -->
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid text-center text-md-left bg-dark">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <br>
+          <!-- Content -->
+          <h5 class="text-uppercase text-white">Contact Information</h5>
+          <p class="text-white" >Here you can use rows and columns to organize your footer content.</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <br>
+          <!-- Links -->
+          <h5 class="text-uppercase text-white">Categories</h5>
+  
+          <ul class="list-unstyled text-white">
+            <li>
+              <a href="/">Matric books</a>
+            </li>
+            <li>
+              <a href="/">Primary books</a>
+            </li>
+            <li>
+              <a href="/">Secondary Books</a>
+            </li>
+            <li>
+              <a href="/">Stationary items</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <br>
+          <!-- Links -->
+          <h5 class="text-uppercase text-white">Support</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="/request">Make a request</a>
+            </li>
+            <li>
+              <a href="/contact">contact Us</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-black">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/">Book&StationaryShop.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  {%block js%}{%endblock%}
+  </body>
+</html>

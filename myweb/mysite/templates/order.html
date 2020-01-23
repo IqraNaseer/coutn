@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %} Book order {% endblock %}
+{% block content %}
+<h2>Book Your order</h2>
+<form method="post" action="/detail/">{% csrf_token %}
+  <input type="hidden" name="itemsJson" id="itemsJson">
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <label for="inputname">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+      </div>
+  </div>
+  <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+      <label for="inputAddress2">Address line 2</label>
+      <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+      <label for="inputZip">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone">
+  </div>
+  <div class="form-group">
+    <label for="inputZip">Quantity</label>
+    <input type="text" class="form-control" id="quty" name="quty">
+</div>
+<div class="form-group">
+  <label for="inputZip">Clothes Detail</label>
+  <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+</div>
+
+  <button type="submit" class="btn btn-primary" >Place Order</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script>
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+//console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+     if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    {% if thank %}
+    alert('Thanks for ordering with us.');
+    {% endif %}
+</script>
+{% endblock %}
